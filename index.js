@@ -8,6 +8,10 @@ app.set("views", path.join(__dirname, "/views"));
 app.get("/", (req, res) => {
   res.render("home");
 });
+app.get("/cats", (req, res) => {
+  const cats = ["Blue", "Bunny", "Stoney", "Monty", "Winston", "Fergueson"];
+  res.render("cats", { allCats: cats });
+});
 
 app.get("/r/:subreddit", (req, res) => {
   const { subreddit } = req.params;
